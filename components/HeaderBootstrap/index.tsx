@@ -1,5 +1,6 @@
 import {
   FaGithub,
+  FaGithubAlt,
   FaInstagram,
   FaLaptopCode,
   FaLinkedinIn,
@@ -11,7 +12,7 @@ export default function HeaderBootstrap() {
       <div className="container-fluid text-center">
         <a
           className="navbar-brand"
-          href="https://github.com/lucarampi/sum-21-challenge#readme"
+          href="https://github.com/lucarampi/"
           target={`_blank`}
         >
           <span className="me-2">
@@ -31,7 +32,8 @@ export default function HeaderBootstrap() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse " id="navbarNav">
-          <ul className="navbar-nav text-center">
+          <ul className="navbar-nav text-center d-flex">
+           
             <li className="nav-item ">
               <a
                 className="nav-link active"
@@ -60,6 +62,16 @@ export default function HeaderBootstrap() {
                 target={`_blank`}
               >
                 <FaLaptopCode />
+              </a>
+            </li>
+            <li className="nav-item ">
+              <a
+                className="nav-link active"
+                aria-current="page"
+                href="https://github.com/lucarampi/sum-21-challenge#readme"
+                target={`_blank`}
+              >
+                 <strong>Readme</strong>
               </a>
             </li>
           </ul>
