@@ -60,7 +60,7 @@ function  generate_numbers(max: string): number[] {
 		.filter((number) =>  number.toString().length  ==  LENGTH);
 	const  result_array  = all_numbers_array.filter(check_number);
 	return  result_array;
-        }
+}
 ```
 In the end, we have our result array with all numbers that respect all the requirements.
 You can check this code working by [clicking here](https://sum-21-challenge.vercel.app/)
