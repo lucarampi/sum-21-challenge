@@ -1,34 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Why I did this? 🤷🏻‍♂️
 
-## Getting Started
 
-First, run the development server:
+I applied for a job and I needed to **resolve a challenge** using only  JavaSacript. Unfortunately, I couldn't find the bug before the deadline (about 40 minutes) and I got very upset. So I did what every programmer would do: **I took that personal**. I spent a few more minutes figuring out the bug and fixing it.
 
-```bash
-npm run dev
-# or
-yarn dev
+I'm learning Next.js so I thought "*Should I make a simple app to train what I've already learned?*" **Why not?**. Btw it was useful to remind a bit of Bootstrap...
+
+
+
+# The challenge 💡
+I don't remember the exact question, but I'm sure you will get the idea.  
+The user should select a number (between 0-9). From that, the program should generate a new 4-digit number by repeating the user input. Here is an example: 
+
+```tsx
+	userInput = 3;
+	newNumber = 3333;
+```
+    
+New it should create an array that contains every number that the sum of all its digits should be equal to 21 (basically we need to decompose the numbers and sum). With that said we will have (using the *newNumber* variable above as reference) the result:
+```tsx
+	resultArray = [1299, 1389, 1398, ..., 3297]
+```
+ps.:  Because this is impossible to occur with the numbers 0 and 1 I excluded them (0993 is not valid).
+
+Note: I couldn't find the exact link but it was on [HackerRank](https://www.hackerrank.com/).
+
+## Some code 👨‍💻
+First of all we need to convert the user input into a 4-digit number:
+```tsx
+function  convertToMaxValue(value: number) {
+	return  `${value}${value}${value}${value}`;
+	//note that the returned value is a string
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ 
+We also need to check if all the selected numbers fill the 21-sum requirement. This function will be called later.
+```tsx
+function check_number(checking_number: number) {
+	const number_array = Array.from(checking_number.toString().split(""));
+	const sum = Number(
+		number_array.reduce((acc, currVal) => {
+			return acc + Number(currVal);
+			}, 0)
+		);
+	if (sum == 21) {
+		return true;
+	    }
+	return false;
+}
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Once we've done that we are ready to go end get our answer. 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+In first place we generate an Array with all the positive numbers up to the max possible value (which is that 4-digit). You might notice that a filter removes all non-4-digit numbers whitch was our first objective. 
+```tsx
+function  generate_numbers(max: string): number[] {
+	const  max_number_possible  =  Number(max);
+	const  all_numbers_array  =  Array.from(Array(max_number_possible  +  1).keys())
+		.filter((number) =>  number.toString().length  ==  LENGTH);
+	const  result_array  = all_numbers_array.filter(check_number);
+	return  result_array;
+        }
+```
+In the end, we have our result array with all numbers that respect all the requirements.
+You can check this code working by [clicking here](https://sum-21-challenge.vercel.app/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+My Linked-in: [Luca Alfaro Rampinelli](https://www.linkedin.com/in/lucarampi/)
