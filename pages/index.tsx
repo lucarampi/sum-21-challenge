@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import Items from "../components/Items";
+//import github icon from react-icons
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import HeaderBootstrap from "../components/HeaderBootstrap";
 
 export default function Home() {
   const LENGTH = 4;
@@ -40,34 +43,32 @@ export default function Home() {
 
   return (
     <section className="container overflow-hidden mb-4">
-      <div className="row align-items-center justify-content-center mt-4">
+      <HeaderBootstrap/>
+      <main className="row align-items-center justify-content-center mt-4">
         <section className="card mt-2 p-3 col-10 text-center">
-        <div className="card-body row">
-          <label className="form-label">Slide to select a number (2-9)</label>
-          <input
-            type="range"
-            className="form-range col col-12"
-            value={input}
-            onChange={(ev) => setInput(Number(ev.target.value))}
-            min={2} 
-            max={9}
-            step={1}
-          />         
-            <p className="col col-4 m-0">Value: {input}</p> 
-            <p className="col col-4 m-0">Results: {items.length}</p> 
+          <div className="card-body row">
+            <label className="form-label">Slide to select a number (2-9)</label>
+            <input
+              type="range"
+              className="form-range col col-12"
+              value={input}
+              onChange={(ev) => setInput(Number(ev.target.value))}
+              min={2}
+              max={9}
+              step={1}
+            />
+            <p className="col col-4 m-0">Value: {input}</p>
+            <p className="col col-4 m-0">Results: {items.length}</p>
             <p className="col col-4 m-0">Max: {convertToMaxValue(input)}</p>
           </div>
         </section>
 
-
-         <section className="row mt-4 gy-2 align-items-center text-center justify-content-center">
-         {items.map((value) => (
+        <section className="row mt-4 gy-2 align-items-center text-center justify-content-center">
+          {items.map((value) => (
             <Items key={value} value={value} />
           ))}
-         </section>
-  
-
-      </div>
+        </section>
+      </main>
     </section>
   );
 }
