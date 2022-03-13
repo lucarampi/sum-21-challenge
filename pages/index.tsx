@@ -39,7 +39,7 @@ export default function Home() {
   }, [input]);
 
   return (
-    <section className="container overflow-hidden">
+    <section className="container overflow-hidden mb-4">
       <div className="row align-items-center justify-content-center mt-4">
         <section className="card mt-2 p-3 col-10 text-center">
         <div className="card-body row">
