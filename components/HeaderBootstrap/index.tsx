@@ -11,7 +11,8 @@ export default function HeaderBootstrap() {
       <div className="container-fluid text-center">
         <a
           className="navbar-brand"
-          href="https://github.com/lucarampi/sum-21-challenge"
+          href="https://github.com/lucarampi/sum-21-challenge#readme"
+          target={`_blank`}
         >
           <span className="me-2">
             <FaGithub />
@@ -36,6 +37,7 @@ export default function HeaderBootstrap() {
                 className="nav-link active"
                 aria-current="page"
                 href="https://www.linkedin.com/in/lucarampi/"
+                target={`_blank`}
               >
                 <FaLinkedinIn />
               </a>
@@ -45,6 +47,7 @@ export default function HeaderBootstrap() {
                 className="nav-link active"
                 aria-current="page"
                 href="https://www.instagram.com/luca_rampi/"
+                target={`_blank`}
               >
                 <FaInstagram />
               </a>
@@ -54,6 +57,7 @@ export default function HeaderBootstrap() {
                 className="nav-link active"
                 aria-current="page"
                 href="https://drive.google.com/file/d/1_P6PPjlM0DLPS7r1h29P3AG8qdHWtyE3/view?usp=sharing"
+                target={`_blank`}
               >
                 <FaLaptopCode />
               </a>
