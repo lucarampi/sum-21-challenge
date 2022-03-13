@@ -1,4 +1,4 @@
-# Why I did this?
+# Why I did this? 🤷🏻‍♂️
 
 
 I applied for a job and I needed to **resolve a challenge** using only  JavaSacript. Unfortunately, I couldn't find the bug before the deadline (about 40 minutes) and I got very upset. So I did what every programmer would do: **I took that personal**. I spent a few more minutes figuring out the bug and fixing it.
@@ -7,7 +7,7 @@ I'm learning Next.js so I thought "*Should I make a simple app to train what I'v
 
 
 
-# The challenge
+# The challenge 💡
 I don't remember the exact question, but I'm sure you will get the idea.  
 The user should select a number (between 0-9). From that, the program should generate a new 4-digit number by repeating the user input. Here is an example: 
 
@@ -24,7 +24,7 @@ ps.:  Because this is impossible to occur with the numbers 0 and 1 I excluded th
 
 Note: I couldn't find the exact link but it was on [HackerRank](https://www.hackerrank.com/).
 
-## Some code
+## Some code 👨‍💻
 First of all we need to convert the user input into a 4-digit number:
 ```tsx
 function  convertToMaxValue(value: number) {
