@@ -48,7 +48,7 @@ export default function HeaderBootstrap() {
               <a
                 className="nav-link active"
                 aria-current="page"
-                href="https://www.instagram.com/luca_rampi/"
+                href="https://www.instagram.com/luca.rampi_/"
                 target={`_blank`}
               >
                 <FaInstagram />
